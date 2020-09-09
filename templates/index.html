@@ -21,13 +21,13 @@
     </div>
 
     <div style="margin-bottom: 30px; margin-top: 30px; text-align: center">
-        <b>Song Kind:</b> {{ musical_key }}
+        <b>Song Kind:</b> {{ musical_key }}. <a href="javascript: window.reload()">Refresh the page</a> for a different kind of song!
     </div>
 
     <ul>
         {% for track in tracks %}
             <li>
-                <a href="{{ track["external_urls"]["spotify"] }}">
+                <a href="{{ track["external_urls"]["spotify"] }}" >
                     {{ track["artist"]|e }} - {{ track["name"]|e }}</a>: (popularity {{ track["popularity"] }})
             </li>
         {% endfor %}
