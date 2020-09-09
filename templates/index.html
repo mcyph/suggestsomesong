@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Spotify SuggestSomething</title>
+</head>
+
+<body>
+<div style="max-width: 750px; margin: 0 auto; font-family: Arial, sans-serif">
+    <h1 style="text-align: center">Unofficial Spotify Song Suggester</h1>
+
+    <div style="text-align: center">
+        <b>Country:</b>
+        <select style="width: 20em" onchange="window.location = '/?country='+this.value">
+            {% for code, country in country_codes %}
+                {% if sel_country == code %}
+                    <option value="{{ code }}" selected>{{ country }}</option>
+                {% else %}
+                    <option value="{{ code }}">{{ country }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </div>
+
+    <div style="margin-bottom: 30px; margin-top: 30px; text-align: center">
+        <b>Song Kind:</b> {{ musical_key }}
+    </div>
+
+    <ul>
+        {% for track in tracks %}
+            <li>
+                <a href="{{ track["external_urls"]["spotify"] }}">
+                    {{ track["artist"]|e }} - {{ track["name"]|e }}</a>: (popularity {{ track["popularity"] }})
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div style="margin-bottom: 30px; margin-top: 30px; text-align: center">
+        See also the <a href="https://github.com/mcyph/suggestsomesong">project page on GitHub</a>
+    </div>
+</div>
+</body>
+</html>
