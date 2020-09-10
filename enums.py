@@ -45,9 +45,8 @@ class SpotifyItem:
         r['target_mode'] = r['min_mode'] = r['max_mode'] = self.mode.value
 
         for key, value in (
-            #('target_danceability', 0.5 + self.danceability/2.0 if self.danceability else None),
+            ('target_danceability', 0.5 + self.danceability/2.0 if self.danceability else None),
             ('target_energy', 0.5 + self.energy/2.0 if self.energy else None),
-            #('target_explicit', self.explicit),
             ('target_tempo', 150 + self.tempo*150 if self.tempo else None),
             ('target_valence', 0.5 + self.valence/2.0 if self.valence else None),
             ('target_loudness', -10 + self.loudness * 10 if self.loudness else None)
@@ -104,8 +103,8 @@ class Emotions:
     HOPEFUL_ASPIRATIONS = SpotifyItem("Hopeful Aspirations", "ψ(｀∇´)ψ", tempo=+0.2, energy=+0.9, loudness=+0.2, mode=Modes.MAJOR)
     TERRIBLE = SpotifyItem("Terrible", "", danceability=-0.5, valence=-0.4, loudness=+0.6, mode=Modes.MINOR)
     BLASPHEMOUS = SpotifyItem("Blasphemous", "", danceability=-0.5, valence=-0.4, loudness=+0.6, mode=Modes.MINOR)
-    UNCONTROLLED_PASSIONS = SpotifyItem("Uncontrolled Passions", "‘`,、(๑´∀｀๑) ‘`,、’`,、", tempo=+0.4, danceability=+0.5, loudness=+0.8, mode=Modes.MAJOR)
-    WILD = SpotifyItem("Wild", "ʅ(◜◡⁰)ʃ", tempo=+0.4, danceability=+0.5, loudness=+0.8, mode=Modes.MAJOR)
+    UNCONTROLLED_PASSIONS = SpotifyItem("Uncontrolled Passions", "‘`,、(๑´∀｀๑) ‘`,、’`,、", tempo=+0.8, danceability=+0.5, loudness=+0.8, mode=Modes.MAJOR)
+    WILD = SpotifyItem("Wild", "ʅ(◜◡⁰)ʃ", tempo=+1.0, danceability=+0.5, loudness=+0.8, mode=Modes.MAJOR)
     SOLITARY = SpotifyItem("Solitary", "", tempo=-0.3, valence=+0.3, energy=-0.7, loudness=-0.3, mode=Modes.MINOR)
     PATIENCE = SpotifyItem("Patience", "(￣▽￣)", tempo=-0.3, valence=+0.3, energy=-0.7, loudness=-0.3, mode=Modes.MINOR)
     TENDER = SpotifyItem("Tender", "", valence=+0.4, energy=-0.7, loudness=-0.3, mode=Modes.MAJOR)

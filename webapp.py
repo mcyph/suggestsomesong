@@ -23,8 +23,20 @@ COUNTRY_CODES = [
     ["tw", "Taiwan"],
     ["es", "Spain"],
     ["fr", "France"],
-    ["kr", "South Korea"],
+    ["ko", "South Korea"],
     ["my", "Malaysia"],
+    ["sg", "Singapore"],
+    ["id", "Indonesia"],
+    ["de", "Germany"],
+    ["it", "Italy"],
+    ["in", "India"],
+    ["th", "Thailand"],
+    ["mx", "Mexico"],
+    ["vn", "Vietnam"],
+    ["ru", "Russia"],
+    ["uk", "Ukraine"],
+    ["tr", "Turkey"],
+    ["za", "South Africa"],
 ]
 
 
