@@ -77,13 +77,15 @@ class WebApp:
             params=params,
             headers=auth_header
         ).json()
-        # pprint(recommendations)
+        #pprint(recommendations)
 
-        tracks = sorted(
-            recommendations['tracks'],
-            key=lambda i: i['popularity'],
-            reverse=True
-        )
+        tracks = recommendations['tracks']
+        #tracks = sorted(
+        #    tracks,
+        #    key=lambda i: i['popularity'],
+        #    reverse=True
+        #)
+        tracks = [i for i in tracks if not i['explicit']]
 
         #print()
         for track in tracks:
