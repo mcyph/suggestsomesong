@@ -8,7 +8,7 @@ from os.path import exists
 from dotenv import load_dotenv
 from jinja2 import Environment, FileSystemLoader
 
-from enums import MusicalKeys
+from enums import Emotions
 
 env = Environment(loader=FileSystemLoader('./templates'))
 load_dotenv(os.path.expanduser('~/.env'))
@@ -47,7 +47,7 @@ class WebApp:
             random.shuffle(ids)
             ids = ','.join(ids[:5])
 
-        musical_key = MusicalKeys.get_random_key()
+        musical_key = Emotions.get_random_key()
         print(str(musical_key))
 
         CLIENT_ID = os.environ.get('CLIENT_ID') or "YOUR KEY HERE"
@@ -64,12 +64,6 @@ class WebApp:
         params = {
             # 'seed_genres': random.choice(genres['genres']),
             'seed_tracks': ids,
-            #'min_key': musical_key.pitch_class,
-            'min_mode': musical_key.minor_major.value,
-            #'max_key': musical_key.pitch_class,
-            'max_mode': musical_key.minor_major.value,
-            #'target_key': musical_key.pitch_class,
-            'target_mode': musical_key.minor_major.value,
             'target_explicit': 0,
             'min_explicit': 0,
             'max_explicit': 0,
