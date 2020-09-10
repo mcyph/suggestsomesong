@@ -64,17 +64,20 @@ class WebApp:
         params = {
             # 'seed_genres': random.choice(genres['genres']),
             'seed_tracks': ids,
-            'min_key': musical_key.pitch_class,
+            #'min_key': musical_key.pitch_class,
             'min_mode': musical_key.minor_major.value,
-            'max_key': musical_key.pitch_class,
+            #'max_key': musical_key.pitch_class,
             'max_mode': musical_key.minor_major.value,
-            'target_key': musical_key.pitch_class,
+            #'target_key': musical_key.pitch_class,
             'target_mode': musical_key.minor_major.value,
-            'min_popularity': 50,
-            'market': 'AU'
+            'target_explicit': 0,
+            'min_explicit': 0,
+            'max_explicit': 0,
+            #'min_popularity': 50,
+            'market': country
         }
         params.update(musical_key.get_target_dict())
-        # print(params)
+        print(params)
         recommendations = requests.get(
             'https://api.spotify.com/v1/recommendations',
             params=params,
